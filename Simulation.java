@@ -1,9 +1,9 @@
 public class Simulation {
-  public void generateData(){
+  public void generateData() {
 
   }
 
-  public Simulation load(){
-      
+  public Simulation load() {
+
   }
 }

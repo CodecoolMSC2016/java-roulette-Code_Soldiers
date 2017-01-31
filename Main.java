@@ -1,5 +1,5 @@
 public class Main {
-  public Simulation generateSimulation(int round){
+  public Simulation generateSimulation(int round) {
 
   }
 
