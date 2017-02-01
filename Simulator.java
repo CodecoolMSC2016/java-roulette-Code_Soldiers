@@ -11,7 +11,7 @@ public class Simulator {
     return new Result(new Simulation());
   }
   public HashMap<String, Double> checkColor(ArrayList<String> datas) {
-   return null;
+    return null;
   }
   public HashMap<String, Double> checkEvenOdd(ArrayList<String> datas) {
    return null;
@@ -22,7 +22,7 @@ public class Simulator {
   public HashMap<String, Double> checkRow(ArrayList<String> datas) {
    return null;
   }
-  public HashMap<String, Double> checkRange(ArrayList<String> datas) {
+  public HashMap<String, Double> checkRange(ArrayList<String> datas, int start, int stop) {
    return null;
   }
 }
