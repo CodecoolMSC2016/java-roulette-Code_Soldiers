@@ -15,7 +15,21 @@ public class Simulator {
     return null;
   }
   public HashMap<String, Integer> checkEvenOdd(ArrayList<String> datas) {
-   return null;
+    int even = 0;
+    int odd = 0;
+    Hashmap<String, Integer> map = new Hashmap<String, Integer>();
+
+    for(int i = 0; i < datas.size(); i++) {
+      if(datas[i] % 2 == 0) {
+        even += 1;
+      }
+      else {
+          odd += 1;
+      }
+    }
+    map.put("Even", even);
+    map.put("Odd", odd);
+    return map;
   }
   public HashMap<String, Integer> checkNumbers(ArrayList<String> datas) {
    return null;
