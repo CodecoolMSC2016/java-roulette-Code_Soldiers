@@ -7,6 +7,7 @@ public class Simulator {
     this.simulation = simulation;
     this.logger = logger;
   }
+  @SuppressWarnings("rawtypes")
   public Result run() {
     Result result = new Result();
     result.addResults(new HashMap[] {checkColor(simulation.getData()), checkEvenOdd(simulation.getData()),
