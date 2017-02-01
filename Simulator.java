@@ -46,10 +46,20 @@ public class Simulator {
     map.put("Odd", odd);
     return map;
   }
-  public HashMap<String, Integer> checkNumbers(ArrayList<String> datas) {
+  public HashMap<String, Integer> checkNumbers(ArrayList<String> dataList) {
     HashMap<String, Integer> map = new HashMap<String, Integer>();
-    for (int i = 0; i < 37; i++) {
-      map.put(Integer.toString(i), 0);
+    Integer[] data = new Integer[dataList.size()];
+    for(int i = 0; i < dataList.size(); i++) {
+      data[i] = Integer.parseInt(dataList.get(i));
+    }
+    for(int number = 0; number < 37; number++) {
+      int n = 0;
+      for(int dataIndex = 0; dataIndex < data.length; dataIndex++) {
+        if(data[dataIndex].equals(number)) {
+          n += 1;
+        }
+      }
+      map.put(Integer.toString(number), n);
     }
     return map;
   }
