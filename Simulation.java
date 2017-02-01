@@ -41,7 +41,7 @@ public class Simulation {
     PrintWriter fw;
     try {
       fw = new PrintWriter(new FileOutputStream("Simulation.csv", true));
-      fw.println(data);
+      fw.println(txt);
       fw.close();
     } catch(IOException e) { }
   }
