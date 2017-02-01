@@ -8,10 +8,14 @@ import java.io.FileReader;
 
 
 public class Simulation {
-  ArrayList<String> data;
+  private ArrayList<String> data;
   private static String colors = "grbrbrbrbrbbr" + "brbrbrrbrbrb" + "rbrbbrbrbrbr";
   public Simulation() {
     data = new ArrayList<String>();
+  }
+
+  public ArrayList<String> getData() {
+    return data;
   }
 
   public void generateData() {
