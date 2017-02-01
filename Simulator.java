@@ -80,6 +80,7 @@ public class Simulator {
     result.put("First", first);
     result.put("Second", second);
     result.put("Third", third);
+    return result;
   }
   public HashMap<String, Integer> checkRange(ArrayList<String> datas, int start, int stop) {
     String range = Integer.toString(start) + "-" + Integer.toString(stop);
@@ -91,5 +92,6 @@ public class Simulator {
       }
     }
     result.put(range, counter);
+    return result;
   }
 }
