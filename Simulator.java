@@ -17,7 +17,7 @@ public class Simulator {
                                      checkRange(simulation.getData(), ranges)});
     return result;
   }
-  public LinkedHashMap<String, Double> makeStatistic(LinkedHashMap<String, Double> results) {
+  public LinkedHashMap<String, Double> makeStatistic(LinkedHashMap<String, Integer> results) {
     LinkedHashMap<String, Double> stats = new LinkedHashMap<String, Double>();
     Set<String> keys = results.keySet();
     for(String key: keys) {
