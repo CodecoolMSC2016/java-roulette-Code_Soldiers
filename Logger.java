@@ -3,7 +3,7 @@ import java.text.*;
 
 public class Logger {
   public void log(String... args) {
-    switch(args.length){
+    switch(args.length) {
       case 0:
         System.out.println("__logError: nothing to log");
         break;
@@ -16,10 +16,9 @@ public class Logger {
       default:
         System.out.println("__logError: too much arguments");
     }
-
   }
 
-  private void logByType(String type, String message){
+  private void logByType(String type, String message) {
     switch(type) {
       case "TimeStamp":
         String text = getDate() + " " + type + " " + message;
