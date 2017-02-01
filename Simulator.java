@@ -50,7 +50,22 @@ public class Simulator {
     return map;
   }
   public HashMap<String, Integer> checkRow(ArrayList<String> datas) {
-   return null;
+    HashMap<String, Integer> result = null;
+    int first = 0, second = 0, third = 0;
+    for(String data: datas) {
+      if(Integer.parseInt(data.substring(1)) != 0) {
+        if(Integer.parseInt(data.substring(1)) % 3 == 1) {
+          first += 1;
+        } else if (Integer.parseInt(data.substring(1)) % 3 == 2) {
+          second += 1;
+        } else {
+          third += 1;
+        }
+      }
+    }
+    result.put("First", first);
+    result.put("Second", second);
+    result.put("Third", third);
   }
   public HashMap<String, Integer> checkRange(ArrayList<String> datas, int start, int stop) {
     String range = Integer.toString(start) + "-" + Integer.toString(stop);
