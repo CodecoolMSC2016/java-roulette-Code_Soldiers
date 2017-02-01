@@ -53,6 +53,14 @@ public class Simulator {
    return null;
   }
   public HashMap<String, Integer> checkRange(ArrayList<String> datas, int start, int stop) {
-   return null;
+    String range = Integer.toString(start) + "-" + Integer.toString(stop);
+    int counter = 0;
+    HashMap<String, Integer> result = null;
+    for(String data: datas) {
+      if(start <= Integer.parseInt(data.substring(1)) && Integer.parseInt(data.substring(1)) >= stop) {
+        counter += 1;
+      }
+    }
+    result.put(range, counter);
   }
 }
