@@ -1,16 +1,16 @@
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 public class Result {
-  protected HashMap<String, Integer> result;
+  protected LinkedHashMap<String, Integer> result;
   public Result() {
-    result = new HashMap<String, Integer>();
+    result = new LinkedHashMap<String, Integer>();
   }
   @SuppressWarnings({"unchecked", "rawtypes"})
-  public void setResults(HashMap[] hashmaps) {
-    for(HashMap<String, Integer> hashmap: hashmaps) {
+  public void setResults(LinkedHashMap[] hashmaps) {
+    for(LinkedHashMap<String, Integer> hashmap: hashmaps) {
       result.putAll(hashmap);
     }
   }
-  public HashMap<String, Integer> getResults() {
+  public LinkedHashMap<String, Integer> getResults() {
       return result;
   }
 }
