@@ -11,7 +11,7 @@ public class Simulation {
   ArrayList<String> data;
   private static String colors = "grbrbrbrbrbbr" + "brbrbrrbrbrb" + "rbrbbrbrbrbr";
   public Simulation() {
-
+    data = new ArrayList<String>();
   }
 
   public void generateData() {
