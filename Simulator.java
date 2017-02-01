@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.Set;
 public class Simulator {
   Simulation simulation;
   Logger logger;
+  protected String[] ranges = new String[] {"1-18", "19-36", "1-12", "13-24", "25-36"};
   public Simulator(Simulation simulation, Logger logger) {
     this.simulation = simulation;
     this.logger = logger;
@@ -10,13 +12,19 @@ public class Simulator {
   @SuppressWarnings("rawtypes")
   public Result run() {
     Result result = new Result();
-    String[] ranges = new String[] {"1-18", "19-36", "1-12", "13-24", "25-36"};
     result.setResults(new LinkedHashMap[] {checkColor(simulation.getData()), checkEvenOdd(simulation.getData()),
-                                     checkNumbers(simulation.getData()), checkRow(simulation.getData())});
-    for(String range: ranges) {
-      result.setResults(new LinkedHashMap[] {checkRange(simulation.getData(), range)});
-    }
+                                     checkNumbers(simulation.getData()), checkRow(simulation.getData()),
+                                     checkRange(simulation.getData(), ranges)});
     return result;
+  }
+  public LinkedHashMap<String, Double> makeStatistic(LinkedHashMap<String, Double> results) {
+    LinkedHashMap<String, Double> stats = new LinkedHashMap<String, Double>();
+    Set<String> keys = results.keySet();
+    for(String key: keys) {
+      double stat = ((double)results.get(key) / results.size())*100;
+      stats.put(key, stat);
+    }
+    return stats;
   }
   public LinkedHashMap<String, Integer> checkColor(ArrayList<String> datas) {
     int black = 0, red = 0;
@@ -77,14 +85,16 @@ public class Simulator {
     }
     return result;
   }
-  public LinkedHashMap<String, Integer> checkRange(ArrayList<String> datas, String range) {
-    int start = Integer.parseInt(range.substring(0, range.indexOf("-")));
-    int stop = Integer.parseInt(range.substring(range.indexOf("-") + 1));
-    int counter = 0;
+  public LinkedHashMap<String, Integer> checkRange(ArrayList<String> datas, String[] ranges) {
     LinkedHashMap<String, Integer> result = new LinkedHashMap<String, Integer>();
-    for(String data: datas) {
-      if(start <= Integer.parseInt(data.substring(1)) && Integer.parseInt(data.substring(1)) <= stop) {
-        result.put(range, ++counter);
+    for(String range: ranges) {
+      int start = Integer.parseInt(range.substring(0, range.indexOf("-")));
+      int stop = Integer.parseInt(range.substring(range.indexOf("-") + 1));
+      int counter = 0;
+      for(String data: datas) {
+        if(start <= Integer.parseInt(data.substring(1)) && Integer.parseInt(data.substring(1)) <= stop) {
+          result.put(range, ++counter);
+        }
       }
     }
     return result;
