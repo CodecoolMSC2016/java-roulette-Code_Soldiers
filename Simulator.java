@@ -20,12 +20,23 @@ public class Simulator {
     checkRange(dataList, ranges);
     return result;
   }
-  public LinkedHashMap<String, Double> makeStatistic(LinkedHashMap<String, Integer> results) {
+
+  public LinkedHashMap<String, LinkedHashMap<String, Double>> mainMakeStatistic(LinkedHashMap<String, LinkedHashMap<String, Integer>> results) {
+    LinkedHashMap<String, Double> temp = new LinkedHashMap<String, Double>();
+    LinkedHashMap<String, LinkedHashMap<String, Double>> stats = new LinkedHashMap<String, LinkedHashMap<String, Double>>();
+    Set<String> mainKeys = results.keySet();
+    for(String mainKey: mainKeys) {
+      temp = subMakeStatistic(results.get(mainKey));
+      stats.put(mainKey, temp);
+      }
+    return stats;
+  }
+  public LinkedHashMap<String, Double> subMakeStatistic(LinkedHashMap<String, Integer> results) {
     LinkedHashMap<String, Double> stats = new LinkedHashMap<String, Double>();
-    Set<String> keys = results.keySet();
-    for(String key: keys) {
-      double stat = ((double)results.get(key) / results.size())*100;
-      stats.put(key, stat);
+    Set<String> subKeys = results.keySet();
+    for(String subKey: subKeys) {
+      double stat = ((double)results.get(subKey) / result.result.size())*100;
+      stats.put(subKey, stat);
     }
     return stats;
   }
@@ -43,17 +54,17 @@ public class Simulator {
   }
   public void checkType(ArrayList<String> datas) {
     int even = 0, odd = 0;
-    LinkedHashMap<String, Integer> evenOdd = new LinkedHashMap<String, Integer>();
+    LinkedHashMap<String, Integer> type = new LinkedHashMap<String, Integer>();
     for(int i = 0; i < datas.size(); i++) {
       int currentNum = Integer.parseInt(datas.get(i).substring(1));
       if(currentNum % 2 == 0) {
-        evenOdd.put("Even", ++even);
+        type.put("Even", ++even);
       }
       else {
-        evenOdd.put("Odd", ++odd);
+        type.put("Odd", ++odd);
       }
     }
-    result.setResult("Type", evenOdd);
+    result.setResult("Type", type);
   }
   public void checkNumbers(ArrayList<String> dataList) {
     LinkedHashMap<String, Integer> map = new LinkedHashMap<String, Integer>();
