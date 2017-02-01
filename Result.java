@@ -1,6 +1,7 @@
+import java.util.HashMap;
 public class Result {
-  Simulation result;
-  public Result(Simulation data) {
-    result = data;
+  HashMap<String, Double> result;
+  public Result() {
+    result = new HashMap<String, Double>();
   }
 }
