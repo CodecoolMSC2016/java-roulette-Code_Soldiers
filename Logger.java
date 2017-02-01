@@ -25,6 +25,9 @@ public class Logger {
         String text = getDate() + " " + type + " " + message;
         System.out.println(text);
         break;
+      case "Upper":
+        System.out.println(message.toUpperCase());
+        break;
       default:
         System.out.println(message);
     }
