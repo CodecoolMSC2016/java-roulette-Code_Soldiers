@@ -47,7 +47,11 @@ public class Simulator {
     return map;
   }
   public HashMap<String, Integer> checkNumbers(ArrayList<String> datas) {
-   return null;
+    HashMap<String, Integer> map = new HashMap<String, Integer>();
+    for (int i = 0; i < 37; i++) {
+      map.put(Integer.toString(i), 0);
+    }
+    return map;
   }
   public HashMap<String, Integer> checkRow(ArrayList<String> datas) {
    return null;
