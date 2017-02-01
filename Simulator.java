@@ -13,7 +13,7 @@ public class Simulator {
   }
   public HashMap<String, Integer> checkColor(ArrayList<String> datas) {
     int green = 0, black = 0, red = 0;
-    HashMap<String, Integer> result = null;
+    HashMap<String, Integer> result = new HashMap<String, Integer>();
     for(String data: datas) {
       if(data.substring(0, 1).equals("g")) {
         green += 1;
@@ -50,7 +50,7 @@ public class Simulator {
     HashMap<String, Integer> map = new HashMap<String, Integer>();
     Integer[] data = new Integer[dataList.size()];
     for(int i = 0; i < dataList.size(); i++) {
-      data[i] = Integer.parseInt(dataList.get(i));
+      data[i] = Integer.parseInt(dataList.get(i).substring(1));
     }
     for(int number = 0; number < 37; number++) {
       int n = 0;
@@ -64,7 +64,7 @@ public class Simulator {
     return map;
   }
   public HashMap<String, Integer> checkRow(ArrayList<String> datas) {
-    HashMap<String, Integer> result = null;
+    HashMap<String, Integer> result = new HashMap<String, Integer>();
     int first = 0, second = 0, third = 0;
     for(String data: datas) {
       if(Integer.parseInt(data.substring(1)) != 0) {
@@ -85,9 +85,9 @@ public class Simulator {
   public HashMap<String, Integer> checkRange(ArrayList<String> datas, int start, int stop) {
     String range = Integer.toString(start) + "-" + Integer.toString(stop);
     int counter = 0;
-    HashMap<String, Integer> result = null;
+    HashMap<String, Integer> result = new HashMap<String, Integer>();
     for(String data: datas) {
-      if(start <= Integer.parseInt(data.substring(1)) && Integer.parseInt(data.substring(1)) >= stop) {
+      if(start <= Integer.parseInt(data.substring(1)) && Integer.parseInt(data.substring(1)) <= stop) {
         counter += 1;
       }
     }
