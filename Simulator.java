@@ -8,21 +8,22 @@ public class Simulator {
     this.logger = logger;
   }
   public Result run() {
-    return new Result(new Simulation());
+    Result result = new Result();
+    return result;
   }
-  public HashMap<String, Double> checkColor(ArrayList<String> datas) {
+  public HashMap<String, Integer> checkColor(ArrayList<String> datas) {
     return null;
   }
-  public HashMap<String, Double> checkEvenOdd(ArrayList<String> datas) {
+  public HashMap<String, Integer> checkEvenOdd(ArrayList<String> datas) {
    return null;
   }
-  public HashMap<String, Double> checkNumbers(ArrayList<String> datas) {
+  public HashMap<String, Integer> checkNumbers(ArrayList<String> datas) {
    return null;
   }
-  public HashMap<String, Double> checkRow(ArrayList<String> datas) {
+  public HashMap<String, Integer> checkRow(ArrayList<String> datas) {
    return null;
   }
-  public HashMap<String, Double> checkRange(ArrayList<String> datas, int start, int stop) {
+  public HashMap<String, Integer> checkRange(ArrayList<String> datas, int start, int stop) {
    return null;
   }
 }

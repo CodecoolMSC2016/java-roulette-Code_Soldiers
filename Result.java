@@ -1,7 +1,7 @@
 import java.util.HashMap;
 public class Result {
-  HashMap<String, Double> result;
+  HashMap<String, Integer> result;
   public Result() {
-    result = new HashMap<String, Double>();
+    result = new HashMap<String, Integer>();
   }
 }
