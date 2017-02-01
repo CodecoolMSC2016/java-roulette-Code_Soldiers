@@ -12,7 +12,21 @@ public class Simulator {
     return result;
   }
   public HashMap<String, Integer> checkColor(ArrayList<String> datas) {
-    return null;
+    int green = 0, black = 0, red = 0;
+    HashMap<String, Integer> result = null;
+    for(String data: datas) {
+      if(data.substring(0, 1).equals("g")) {
+        green += 1;
+      } else if(data.substring(0, 1).equals("b")) {
+        black += 1;
+      } else {
+        red += 1;
+      }
+    }
+    result.put("Green", green);
+    result.put("Black", black);
+    result.put("Red", red);
+    return result;
   }
   public HashMap<String, Integer> checkEvenOdd(ArrayList<String> datas) {
     int even = 0;
