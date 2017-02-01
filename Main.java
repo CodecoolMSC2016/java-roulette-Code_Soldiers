@@ -9,7 +9,7 @@ public class Main {
   }
 
   public static void main(String[] args) {
-    Logger logger;
+    Logger logger = null;
     Simulation simulation = generateSimulation(Integer.parseInt(args[0]));
     Simulator simulator = new Simulator(simulation, logger);
   }

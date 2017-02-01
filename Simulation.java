@@ -14,7 +14,7 @@ public class Simulation {
 
   }
 
-  public void generateData() throws IOException {
+  public void generateData() {
     int r = new Random().ints(1, 0, 37).findFirst().getAsInt();
     String rec = "" + colors.charAt(r) + String.valueOf(r);
     data.add(rec);
