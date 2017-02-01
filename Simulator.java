@@ -34,7 +34,8 @@ public class Simulator {
     Hashmap<String, Integer> map = new Hashmap<String, Integer>();
 
     for(int i = 0; i < datas.size(); i++) {
-      if(datas[i] % 2 == 0) {
+      int currentNum = datas[i].substring(1);
+      if(currentNum % 2 == 0) {
         even += 1;
       }
       else {
