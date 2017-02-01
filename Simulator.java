@@ -10,7 +10,7 @@ public class Simulator {
   @SuppressWarnings("rawtypes")
   public Result run() {
     Result result = new Result();
-    result.addResults(new HashMap[] {checkColor(simulation.getData()), checkEvenOdd(simulation.getData()),
+    result.setResults(new HashMap[] {checkColor(simulation.getData()), checkEvenOdd(simulation.getData()),
                                      checkNumbers(simulation.getData()), checkRow(simulation.getData()),
                                      checkRange(simulation.getData(), 1, 18), checkRange(simulation.getData(), 19, 36),
                                      checkRange(simulation.getData(), 1, 12), checkRange(simulation.getData(), 13, 24),
