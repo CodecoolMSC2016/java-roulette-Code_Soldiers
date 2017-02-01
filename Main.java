@@ -1,9 +1,9 @@
 public class Main {
-  public Simulation generateSimulation(int round) {
-    return null;
+  public static Simulation generateSimulation(int round){
+    return new Simulation();
   }
 
   public static void main(String[] args) {
-    // code
+    generateSimulation(Integer.parseInt(args[0]));
   }
 }

@@ -4,6 +4,6 @@ public class Simulator {
   }
 
   public Result run() {
-    return null;
+    return new Result(new Simulation[5]);
   }
 }
