@@ -13,7 +13,7 @@ public class Result {
   public LinkedHashMap<String, Integer> getColor() {
     return result.get("Color");
   }
-  public LinkedHashMap<String, Integer> getEvenOdd() {
+  public LinkedHashMap<String, Integer> getType() {
     return result.get("Type");
   }
   public LinkedHashMap<String, Integer> getNumbers() {

@@ -14,7 +14,7 @@ public class Simulator {
   public Result run() {
     ArrayList<String> dataList = simulation.getData();
     checkColor(dataList);
-    checkEvenOdd(dataList);
+    checkType(dataList);
     checkNumbers(dataList);
     checkRow(dataList);
     checkRange(dataList, ranges);
@@ -41,7 +41,7 @@ public class Simulator {
     }
     result.setResult("Color", color);
   }
-  public void checkEvenOdd(ArrayList<String> datas) {
+  public void checkType(ArrayList<String> datas) {
     int even = 0, odd = 0;
     LinkedHashMap<String, Integer> evenOdd = new LinkedHashMap<String, Integer>();
     for(int i = 0; i < datas.size(); i++) {
