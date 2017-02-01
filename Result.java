@@ -1,36 +1,28 @@
 import java.util.LinkedHashMap;
 public class Result {
-  protected LinkedHashMap<String, Integer> result;
-  Simulation simulation;
-  Simulator simulator;
+  protected LinkedHashMap<String, LinkedHashMap<String, Integer>> result;
   public Result() {
-    result = new LinkedHashMap<String, Integer>();
+    result = new LinkedHashMap<String, LinkedHashMap<String, Integer>>();
   }
-  @SuppressWarnings({"unchecked", "rawtypes"})
-  public void setResults(LinkedHashMap[] hashmaps) {
-    for(LinkedHashMap<String, Integer> hashmap: hashmaps) {
-      result.putAll(hashmap);
-    }
+  public void setResult(String name, LinkedHashMap<String, Integer> resultMap) {
+    result.put(name, resultMap);
   }
-  public void setResults(LinkedHashMap<String, Integer> resultsMap) {
-    result = resultsMap;
-  }
-  public LinkedHashMap<String, Integer> getFullResults() {
+  public LinkedHashMap<String, LinkedHashMap<String, Integer>> getFullResults() {
       return result;
   }
   public LinkedHashMap<String, Integer> getColor() {
-    return simulator.checkColor(simulation.getData());
+    return result.get("Color");
   }
   public LinkedHashMap<String, Integer> getEvenOdd() {
-    return simulator.checkEvenOdd(simulation.getData());
+    return result.get("Type");
   }
   public LinkedHashMap<String, Integer> getNumbers() {
-    return simulator.checkNumbers(simulation.getData());
+    return result.get("Numbers");
   }
   public LinkedHashMap<String, Integer> getRow() {
-    return simulator.checkRow(simulation.getData());
+    return result.get("Row");
   }
   public LinkedHashMap<String, Integer> getRange() {
-    return simulator.checkRange(simulation.getData(), simulator.ranges);
+    return result.get("Range");
   }
 }
