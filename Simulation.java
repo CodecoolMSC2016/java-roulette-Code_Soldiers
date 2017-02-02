@@ -25,7 +25,7 @@ public class Simulation {
     writeCsv(rec);
   }
 
-  public Simulation load() {
+  public void load() {
     BufferedReader br;
     String line;
     try {
@@ -37,7 +37,6 @@ public class Simulation {
     catch (IOException e) {
 
     }
-    return null;
   }
 
   private void writeCsv(String txt)
