@@ -11,31 +11,32 @@ public class Main {
     Logger logger = null;
     Simulation simulation = null;
     Simulator simulator = null;
-    if(args.length == 1)
-    {
-      simulation = generateSimulation(Integer.parseInt(args[0]));
-      simulator = new Simulator(simulation, logger);
+    Result result = null;
+    if(args.length == 0) {
+      simulation.load();
     } else if(args.length == 0) {
-      simulator = new Simulator(simulation, logger);
-      startMenu(simulator, logger);
-    } else {
-      throw new IllegalArgumentException();
+      simulation = generateSimulation(Integer.parseInt(args[0]));
     }
-    // simulation.load();
-  }
-
-  public static void startMenu(Simulator simulator, Logger logger){
+    simulator = new Simulator(simulation, logger);
+    result = simulator.run();
     boolean running = true;
-    while(running){
-      String[] commands = logger.getInput();
-      switch(commands.length){
-        case 2:
-          switch(commands[0]){
-            case "generate":
-
-            }
+    while(running) {
+      switch(logger.getInput().toLowerCase()) {
+        case "color":
+          break;
+        case "type":
+          break;
+        case "numbers":
+          break;
+        case "row":
+          break;
+        case "range":
+          break;
+        case "exit":
+          break;
+        default:
+          break;
       }
     }
   }
-
 }

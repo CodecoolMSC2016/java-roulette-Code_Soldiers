@@ -20,9 +20,8 @@ public class Logger {
     }
   }
 
-  public String[] getInput()
-  {
-    return scanner.nextLine().split(" ");
+  public String getInput() {
+    return scanner.nextLine();
   }
 
   private void logByType(String type, String message) {
