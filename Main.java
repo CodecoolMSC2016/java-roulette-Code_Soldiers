@@ -16,23 +16,23 @@ public class Main {
       simulation = generateSimulation(Integer.parseInt(args[0]));
       simulator = new Simulator(simulation, logger);
     } else if(args.length == 0) {
-      startMenu(logger, simulation, simulator);
+      simulator = new Simulator(simulation, logger);
+      startMenu(simulator, logger);
     } else {
       throw new IllegalArgumentException();
     }
     // simulation.load();
   }
 
-  public static void startMenu(Logger logger, Simulation simulation, Simulator simulator){
+  public static void startMenu(Simulator simulator, Logger logger){
     boolean running = true;
     while(running){
       String[] commands = logger.getInput();
       switch(commands.length){
-          case 2:
-            switch(commands[0]){
-                case "generate":
-                    simulation = generateSimulation(Integer.parseInt(commands[1]));
-                    simulator = new Simulator(simulation, logger);
+        case 2:
+          switch(commands[0]){
+            case "generate":
+
             }
       }
     }
