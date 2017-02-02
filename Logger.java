@@ -33,12 +33,12 @@ public class Logger {
 
   }
   public void printOut() {
-    
+
   }
   private void logByType(String type, String message) {
     switch(type) {
       case "TimeStamp":
-        String text = getDate() + " " + type + " " + message;
+        String text = getDate() + " " + " " + message;
         System.out.println(text);
         break;
       case "Upper":
