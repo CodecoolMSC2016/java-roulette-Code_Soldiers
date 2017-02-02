@@ -1,13 +1,17 @@
 import java.lang.Thread;
 import java.util.LinkedHashMap;
 public class Main {
-  public static Simulation generateSimulation(int round) {
-    Simulation simulation = new Simulation();
+  public static Simulation generateSimulation(int round, Simulation simulation) {
     for(int i = 0; i < round; i++) {
       simulation.generateData();
     }
     return simulation;
   }
+
+  public static Simulation generateSimulation(int round) {
+    return generateSimulation(round, new Simulation());
+  }
+
 
   public static void main(String[] args) {
     Logger logger = new Logger();
@@ -38,7 +42,8 @@ public class Main {
       switch(logger.getInput("Choose from above: ").toLowerCase()) {
         case "generate":
           int generateTimes = Integer.parseInt(logger.getInput("How many new rounds do you want to generate? "));
-          simulation = generateSimulation(generateTimes);
+          simulation = generateSimulation(generateTimes, simulation);
+          result = simulator.run();
           break;
         case "color":
           logger.printResult(result.sortResult(result.getColorPercent()), result.getColorNumbers());
