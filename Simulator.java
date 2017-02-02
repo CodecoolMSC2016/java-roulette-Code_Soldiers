@@ -4,13 +4,12 @@ import java.util.Set;
 public class Simulator {
   Simulation simulation;
   Logger logger;
-  Result resultNumbers, resultPercent;
+  Result result;
   protected String[] ranges = new String[] {"1-18", "19-36", "1-12", "13-24", "25-36"};
   public Simulator(Simulation simulation, Logger logger) {
     this.simulation = simulation;
     this.logger = logger;
-    this.resultPercent = new Result();
-    this.resultNumbers = new Result();
+    this.result = new Result();
   }
   public Result run() {
     ArrayList<String> dataList = simulation.getData();
@@ -19,17 +18,16 @@ public class Simulator {
     checkNumbers(dataList);
     checkRow(dataList);
     checkRange(dataList, ranges);
-    return resultNumbers;
+    return result;
   }
-  public LinkedHashMap<String, LinkedHashMap<String, Double>> mainMakeStatistic(LinkedHashMap<String, LinkedHashMap<String, Double>> results) {
+  public void mainMakeStatistic(LinkedHashMap<String, LinkedHashMap<String, Double>> results) {
     LinkedHashMap<String, Double> temp = new LinkedHashMap<String, Double>();
     LinkedHashMap<String, LinkedHashMap<String, Double>> stats = new LinkedHashMap<String, LinkedHashMap<String, Double>>();
     Set<String> mainKeys = results.keySet();
     for(String mainKey: mainKeys) {
       temp = subMakeStatistic(results.get(mainKey));
-      stats.put(mainKey, temp);
+      result.setResultPercent(mainKey, temp);
       }
-    return stats;
   }
   public LinkedHashMap<String, Double> subMakeStatistic(LinkedHashMap<String, Double> results) {
     LinkedHashMap<String, Double> stats = new LinkedHashMap<String, Double>();
@@ -50,7 +48,7 @@ public class Simulator {
         color.put("Red", ++red);
       }
     }
-    resultNumbers.setResult("Color", color);
+    result.setResultNumbers("Color", color);
   }
   public void checkType(ArrayList<String> datas) {
     double even = 0.0, odd = 0.0;
@@ -64,7 +62,7 @@ public class Simulator {
         type.put("Odd", ++odd);
       }
     }
-    resultNumbers.setResult("Type", type);
+    result.setResultNumbers("Type", type);
   }
   public void checkNumbers(ArrayList<String> dataList) {
     LinkedHashMap<String, Double> map = new LinkedHashMap<String, Double>();
@@ -81,7 +79,7 @@ public class Simulator {
       }
       map.put(Integer.toString(number), n);
     }
-    resultNumbers.setResult("Numbers", map);
+    result.setResultNumbers("Numbers", map);
   }
   public void checkRow(ArrayList<String> datas) {
     LinkedHashMap<String, Double> temp = new LinkedHashMap<String, Double>();
@@ -97,7 +95,7 @@ public class Simulator {
         }
       }
     }
-    resultNumbers.setResult("Row", temp);
+    result.setResultNumbers("Row", temp);
   }
   public void checkRange(ArrayList<String> datas, String[] ranges) {
     LinkedHashMap<String, Double> temp = new LinkedHashMap<String, Double>();
@@ -111,6 +109,6 @@ public class Simulator {
         }
       }
     }
-    resultNumbers.setResult("Range", temp);
+    result.setResultNumbers("Range", temp);
   }
 }
