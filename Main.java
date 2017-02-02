@@ -39,28 +39,28 @@ public class Main {
     boolean running = true;
     while(running) {
       logger.mainMenu();
-      switch(logger.getInput("Choose from above: ").toLowerCase()) {
-        case "generate":
+      switch(logger.getInput("Choose from above: ")) {
+        case "1":
           int generateTimes = Integer.parseInt(logger.getInput("How many new rounds do you want to generate? "));
           simulation = generateSimulation(generateTimes, simulation);
           result = simulator.run();
           break;
-        case "color":
+        case "2":
           logger.printResult(result.sortResult(result.getColorPercent()), result.getColorNumbers());
           break;
-        case "type":
+        case "3":
           logger.printResult(result.sortResult(result.getTypePercent()), result.getTypeNumbers());
           break;
-        case "numbers":
+        case "4":
           logger.printResult(result.sortResult(result.getNumbersPercent()), result.getNumbersNumbers());
           break;
-        case "row":
+        case "5":
           logger.printResult(result.sortResult(result.getRowPercent()), result.getRowNumbers());
           break;
-        case "range":
+        case "6":
           logger.printResult(result.sortResult(result.getRangePercent()), result.getRangeNumbers());
           break;
-        case "exit":
+        case "7":
           running = false;
           try {
             logger.easterEgg();

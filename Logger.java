@@ -76,14 +76,11 @@ public class Logger {
     }
   }
   public void mainMenu() {
+    String[] menu = new String[]{"Generate", "Color", "Type", "Numbers", "Row", "Range", "Exit"};
     System.out.println("\nMain menu");
-    System.out.println("--> generate");
-    System.out.println("--> color");
-    System.out.println("--> type");
-    System.out.println("--> numbers");
-    System.out.println("--> row");
-    System.out.println("--> range");
-    System.out.println("--> exit");
+    for(int index = 0; index < menu.length; index++) {
+      System.out.println(String.format("--> %d: %s", index + 1, menu[index]));
+    }
   }
   private void logByType(String type, String message) {
     switch(type) {
