@@ -1,3 +1,6 @@
+import java.util.Map;
+import java.util.Comparator;
+
 public class Test
 {
   public static void main(String[] args)
@@ -15,5 +18,12 @@ public class Test
     //System.out.println(result.getRow());
     //System.out.println(result.getRange());
     System.out.println(result.getFullResultPercent());
+    System.out.println();
+    Map<String, Double> asd = result.getNumbersNumbers();
+    asd.entrySet().stream()
+      .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+      .forEach(System.out::println);
+    System.out.println(asd);
+
   }
 }
