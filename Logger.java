@@ -23,7 +23,18 @@ public class Logger {
   public String getInput() {
     return scanner.nextLine();
   }
+  public void easterEgg() {
 
+  }
+  public void mainMenu() {
+
+  }
+  public void loggers() {
+
+  }
+  public void printOut() {
+    
+  }
   private void logByType(String type, String message) {
     switch(type) {
       case "TimeStamp":
