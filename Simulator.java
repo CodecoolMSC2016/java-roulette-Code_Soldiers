@@ -5,16 +5,15 @@ public class Simulator {
   Simulation simulation;
   Logger logger;
   Result resultNumbers, resultPercent;
-  private ArrayList<String> dataList;
   protected String[] ranges = new String[] {"1-18", "19-36", "1-12", "13-24", "25-36"};
   public Simulator(Simulation simulation, Logger logger) {
     this.simulation = simulation;
     this.logger = logger;
     this.resultPercent = new Result();
     this.resultNumbers = new Result();
-    this.dataList = simulation.getData();
   }
   public Result run() {
+    ArrayList<String> dataList = simulation.getData();
     checkColor(dataList);
     checkType(dataList);
     checkNumbers(dataList);
@@ -36,7 +35,7 @@ public class Simulator {
     LinkedHashMap<String, Double> stats = new LinkedHashMap<String, Double>();
     Set<String> subKeys = results.keySet();
     for(String subKey: subKeys) {
-      double stat = ((double)results.get(subKey) / dataList.size())*100;
+      double stat = ((double)results.get(subKey) / simulation.getData().size())*100;
       stats.put(subKey, stat);
     }
     return stats;
