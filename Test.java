@@ -4,6 +4,7 @@ public class Test
   {
     Simulation sn = new Simulation();
     sn.load();
+    //sn.load()
     Simulator sr = new Simulator(sn, new Logger());
     Result result = sr.run();
     System.out.println(sn.getData());
@@ -13,6 +14,6 @@ public class Test
     //System.out.println(result.getNumbers());
     //System.out.println(result.getRow());
     //System.out.println(result.getRange());
-    System.out.println(sr.subMakeStatistic(result.getNumbers()));
+    System.out.println(sr.mainMakeStatistic(result.getFullResults()));
   }
 }
