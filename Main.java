@@ -20,7 +20,7 @@ public class Main {
       simulation.load();
       logger.log("TimeStamp", "Loading completed!");
       logger.waitTime(500);
-    } else if(args.length == 0) {
+    } else if(args.length == 1) {
       simulation = generateSimulation(Integer.parseInt(args[0]));
     }
     simulator = new Simulator(simulation, logger);
@@ -32,8 +32,10 @@ public class Main {
     boolean running = true;
     while(running) {
       logger.mainMenu();
-      switch(logger.getInput().toLowerCase()) {
+      switch(logger.getInput("Choose from above: ").toLowerCase()) {
         case "generate":
+          int fuckthisjava = Integer.parseInt(logger.getInput("tokomtudja"));
+          simulation = generateSimulation(fuckthisjava);
           break;
         case "color":
           result.getColorPercent();

@@ -21,8 +21,8 @@ public class Logger {
     }
   }
 
-  public String getInput() {
-    System.out.print("Choose from above: ");
+  public String getInput(String message) {
+    System.out.print(message);
     return scanner.nextLine();
   }
   public void waitTime(int millisecond) {
