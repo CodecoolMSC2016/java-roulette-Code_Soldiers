@@ -64,7 +64,13 @@ public class Logger {
     }
   }
   public void mainMenu() {
-
+    System.out.println("Main menu");
+    System.out.println("--> color");
+    System.out.println("--> type");
+    System.out.println("--> numbers");
+    System.out.println("--> row");
+    System.out.println("--> range");
+    System.out.println("--> exit");
   }
   public void loggers() {
 
