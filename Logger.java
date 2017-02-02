@@ -69,9 +69,11 @@ public class Logger {
       System.out.println(line);
     }
   }
-  public void printResult(String name, LinkedHashMap<String, LinkedHashMap<String, Double>> percent,
-                          LinkedHashMap<String, LinkedHashMap<String, Double>> numbers) {
-
+  public void printResult(LinkedHashMap<String, Double> percent, LinkedHashMap<String, Double> numbers) {
+    Set<String> keys = percent.keySet();
+    for(String key: keys) {
+      System.out.println(String.format("%s --> %.2f%s (%.0f pcs)", key, percent.get(key), "%", numbers.get(key)));
+    }
   }
   public void mainMenu() {
     System.out.println("\nMain menu");

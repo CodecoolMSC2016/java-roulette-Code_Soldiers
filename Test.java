@@ -21,11 +21,5 @@ public class Test
     //System.out.println(result.getRange());
     System.out.println(result.getFullResultPercent());
     System.out.println();
-    Map<String, Double> asd = result.getNumbersNumbers();
-    Map<String, Double> asd2 = asd.entrySet().stream()
-      .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-      .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
-    System.out.println(asd2);
-
   }
 }

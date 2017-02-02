@@ -1,4 +1,5 @@
 import java.lang.Thread;
+import java.util.LinkedHashMap;
 public class Main {
   public static Simulation generateSimulation(int round) {
     Simulation simulation = new Simulation();
@@ -13,6 +14,8 @@ public class Main {
     Simulation simulation = null;
     Simulator simulator = null;
     Result result = null;
+    LinkedHashMap<String, Double> unSortedResult = new LinkedHashMap<String, Double>();
+    LinkedHashMap<String, Double> resultNumbers = new LinkedHashMap<String, Double>();
     if(args.length == 0) {
       simulation = new Simulation();
       logger.log("TimeStamp", "Loading...");
@@ -38,15 +41,19 @@ public class Main {
           simulation = generateSimulation(generateTimes);
           break;
         case "color":
-          result.getColorPercent();
+          logger.printResult(result.sortResult(result.getColorPercent()), result.getColorNumbers());
           break;
         case "type":
+          logger.printResult(result.sortResult(result.getTypePercent()), result.getTypeNumbers());
           break;
         case "numbers":
+          logger.printResult(result.sortResult(result.getNumbersPercent()), result.getNumbersNumbers());
           break;
         case "row":
+          logger.printResult(result.sortResult(result.getRowPercent()), result.getRowNumbers());
           break;
         case "range":
+          logger.printResult(result.sortResult(result.getRangePercent()), result.getRangeNumbers());
           break;
         case "exit":
           running = false;

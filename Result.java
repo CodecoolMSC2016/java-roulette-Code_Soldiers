@@ -1,4 +1,8 @@
 import java.util.LinkedHashMap;
+import java.util.Set;
+import java.util.Map;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 public class Result {
   private LinkedHashMap<String, LinkedHashMap<String, Double>> resultNumbers;
   private LinkedHashMap<String, LinkedHashMap<String, Double>> resultPercent;
@@ -38,4 +42,9 @@ public class Result {
   public LinkedHashMap<String, Double> getRangePercent() {
     return resultPercent.get("Range"); }
 
+  public LinkedHashMap<String, Double> sortResult(LinkedHashMap<String, Double> percent) {
+    return percent.entrySet().stream()
+      .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+      .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+  }
 }
