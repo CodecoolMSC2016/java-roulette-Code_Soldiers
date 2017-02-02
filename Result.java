@@ -1,7 +1,7 @@
 import java.util.LinkedHashMap;
 public class Result {
-  protected LinkedHashMap<String, LinkedHashMap<String, Double>> resultNumbers;
-  protected LinkedHashMap<String, LinkedHashMap<String, Double>> resultPercent;
+  private LinkedHashMap<String, LinkedHashMap<String, Double>> resultNumbers;
+  private LinkedHashMap<String, LinkedHashMap<String, Double>> resultPercent;
   public Result() {
     resultNumbers = new LinkedHashMap<String, LinkedHashMap<String, Double>>();
     resultPercent = new LinkedHashMap<String, LinkedHashMap<String, Double>>();
