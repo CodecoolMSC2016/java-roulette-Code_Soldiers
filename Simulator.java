@@ -18,6 +18,7 @@ public class Simulator {
     checkNumbers(dataList);
     checkRow(dataList);
     checkRange(dataList, ranges);
+    mainMakeStatistic(result.resultNumbers);
     return result;
   }
   public void mainMakeStatistic(LinkedHashMap<String, LinkedHashMap<String, Double>> results) {
