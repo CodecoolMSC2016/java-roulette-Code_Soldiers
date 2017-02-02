@@ -14,6 +14,6 @@ public class Test
     //System.out.println(result.getNumbers());
     //System.out.println(result.getRow());
     //System.out.println(result.getRange());
-    System.out.println(sr.mainMakeStatistic(result.getFullResults()));
+    System.out.println(result.getFullResultPercent());
   }
 }
