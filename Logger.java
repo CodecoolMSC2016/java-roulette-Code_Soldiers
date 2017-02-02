@@ -31,6 +31,7 @@ public class Logger {
     } catch (InterruptedException e) {};
   }
   public void easterEgg() throws InterruptedException {
+    System.out.println(String.format("\033[2J"));
     String[] easterEgg = new String[] {"   __       __  _______    ______    ______  ",
                                        "  |  \\     /  \\|       \\  /      \\  /      \\ ",
                                        "  | $$\\   /  $$| $$$$$$$\\|  $$$$$$\\|  $$$$$$\\",

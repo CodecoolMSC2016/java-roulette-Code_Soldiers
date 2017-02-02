@@ -20,6 +20,7 @@ public class Main {
     Result result = null;
     LinkedHashMap<String, Double> unSortedResult = new LinkedHashMap<String, Double>();
     LinkedHashMap<String, Double> resultNumbers = new LinkedHashMap<String, Double>();
+    int totalResult;
     logger.printLogo();
     logger.waitTime(1000);
     if(args.length == 0) {
@@ -30,6 +31,7 @@ public class Main {
       logger.log("TimeStamp", "Loading completed!");
       logger.waitTime(500);
     } else if(args.length == 1) {
+      simulation.load();
       simulation = generateSimulation(Integer.parseInt(args[0]));
     }
     simulator = new Simulator(simulation, logger);
@@ -41,12 +43,12 @@ public class Main {
     boolean running = true;
     while(running) {
       logger.mainMenu();
-      int totalResult = simulation.getData().size();
+      totalResult = simulation.getData().size();
       switch(logger.getInput("Choose from above: ")) {
         case "1":
           int generateTimes = Integer.parseInt(logger.getInput("How many new rounds do you want to generate? "));
           simulation = generateSimulation(generateTimes, simulation);
-          logger.log("TimeStamp", String.format("Simulating %d events...", generateTimes));
+          logger.log("TimeStamp", String.format("Simulating %d evenets...", generateTimes));
           logger.waitTime(2000);
           logger.log("TimeStamp", "Simulation completed!");
           logger.log("TimeStamp", "Evaluation of results...");
