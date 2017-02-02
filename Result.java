@@ -11,15 +11,15 @@ public class Result {
   }
   public LinkedHashMap<String, LinkedHashMap<String, Double>> getFullResultNumbers() {
       return resultNumber; }
-  public LinkedHashMap<String, Double> getColorNumber() {
+  public LinkedHashMap<String, Double> getColorNumbers() {
     return resultNumber.get("Color"); }
-  public LinkedHashMap<String, Double> getTypeNumber() {
+  public LinkedHashMap<String, Double> getTypeNumbers() {
     return resultNumber.get("Type"); }
-  public LinkedHashMap<String, Double> getNumbersNumber() {
+  public LinkedHashMap<String, Double> getNumbersNumbers() {
     return resultNumber.get("Numbers"); }
-  public LinkedHashMap<String, Double> getRowNumber() {
+  public LinkedHashMap<String, Double> getRowNumbers() {
     return resultNumber.get("Row"); }
-  public LinkedHashMap<String, Double> getRangeNumber() {
+  public LinkedHashMap<String, Double> getRangeNumbers() {
     return resultNumber.get("Range"); }
 
   public void setResultPercent(String name, LinkedHashMap<String, Double> resultMap) {
