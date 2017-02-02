@@ -34,8 +34,8 @@ public class Main {
       logger.mainMenu();
       switch(logger.getInput("Choose from above: ").toLowerCase()) {
         case "generate":
-          int fuckthisjava = Integer.parseInt(logger.getInput("tokomtudja"));
-          simulation = generateSimulation(fuckthisjava);
+          int generateTimes = Integer.parseInt(logger.getInput("How many new rounds do you want to generate? "));
+          simulation = generateSimulation(generateTimes);
           break;
         case "color":
           result.getColorPercent();
