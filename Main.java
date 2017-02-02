@@ -23,12 +23,19 @@ public class Main {
     // simulation.load();
   }
 
-  public static void startMenu(Logger logger, Simulation simulation, Simulator simulator)
-  {
+  public static void startMenu(Logger logger, Simulation simulation, Simulator simulator){
     boolean running = true;
-    while(running)
-    {
-        command = logger.getInput();
+    while(running){
+      String[] commands = logger.getInput();
+      switch(commands.length){
+          case 2:
+            switch(commands[0]){
+                case "generate":
+                    simulation = generateSimulation(Integer.parseInt(commands[1]));
+                    simulator = new Simulator(simulation, logger);
+            }
+      }
     }
   }
+
 }
