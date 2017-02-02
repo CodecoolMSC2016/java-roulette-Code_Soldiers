@@ -2,6 +2,8 @@ import java.util.*;
 import java.text.*;
 
 public class Logger {
+  Scanner scanner = new Scanner(System.in);
+
   public void log(String... args) {
     switch(args.length) {
       case 0:
@@ -16,6 +18,11 @@ public class Logger {
       default:
         System.out.println("__logError: too much arguments");
     }
+  }
+
+  public String[] getInput()
+  {
+    return scanner.nextLine().split(" ");
   }
 
   private void logByType(String type, String message) {

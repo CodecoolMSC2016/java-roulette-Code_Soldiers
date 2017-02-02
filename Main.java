@@ -15,10 +15,20 @@ public class Main {
     {
       simulation = generateSimulation(Integer.parseInt(args[0]));
       simulator = new Simulator(simulation, logger);
-    }
-    else
+    } else if(args.length == 0) {
+      startMenu(logger, simulation, simulator);
+    } else {
       throw new IllegalArgumentException();
+    }
     // simulation.load();
+  }
 
+  public static void startMenu(Logger logger, Simulation simulation, Simulator simulator)
+  {
+    boolean running = true;
+    while(running)
+    {
+        command = logger.getInput();
+    }
   }
 }
