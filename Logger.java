@@ -76,7 +76,7 @@ public class Logger {
   private void logByType(String type, String message) {
     switch(type) {
       case "TimeStamp":
-        String text = getDate() + " " + " " + message;
+        String text = getDate() + " " + message;
         System.out.println(text);
         break;
       case "Upper":
