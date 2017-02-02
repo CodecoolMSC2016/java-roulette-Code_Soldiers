@@ -22,6 +22,8 @@ public class Main {
     boolean running = true;
     while(running) {
       switch(logger.getInput().toLowerCase()) {
+        case "generate":
+          break;
         case "color":
           break;
         case "type":
