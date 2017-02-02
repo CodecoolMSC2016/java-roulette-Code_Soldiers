@@ -20,6 +20,8 @@ public class Main {
     Result result = null;
     LinkedHashMap<String, Double> unSortedResult = new LinkedHashMap<String, Double>();
     LinkedHashMap<String, Double> resultNumbers = new LinkedHashMap<String, Double>();
+    logger.printLogo();
+    logger.waitTime(1000);
     if(args.length == 0) {
       simulation = new Simulation();
       logger.log("TimeStamp", "Loading...");
@@ -32,33 +34,40 @@ public class Main {
     }
     simulator = new Simulator(simulation, logger);
     logger.log("TimeStamp", "Simulator initializing...");
-    logger.waitTime(5000);
+    logger.waitTime(3000);
     result = simulator.run();
     logger.log("TimeStamp", "Simulation completed!");
     logger.waitTime(1000);
     boolean running = true;
     while(running) {
       logger.mainMenu();
+      int totalResult = simulation.getData().size();
       switch(logger.getInput("Choose from above: ")) {
         case "1":
           int generateTimes = Integer.parseInt(logger.getInput("How many new rounds do you want to generate? "));
           simulation = generateSimulation(generateTimes, simulation);
+          logger.log("TimeStamp", String.format("Simulating %d events...", generateTimes));
+          logger.waitTime(2000);
+          logger.log("TimeStamp", "Simulation completed!");
+          logger.log("TimeStamp", "Evaluation of results...");
+          logger.waitTime(generateTimes * 2);
           result = simulator.run();
+          logger.log("TimeStamp", "Evaluation done!");
           break;
         case "2":
-          logger.printResult(result.sortResult(result.getColorPercent()), result.getColorNumbers());
+          logger.printResult(result.sortResult(result.getColorPercent()), result.getColorNumbers(), totalResult);
           break;
         case "3":
-          logger.printResult(result.sortResult(result.getTypePercent()), result.getTypeNumbers());
+          logger.printResult(result.sortResult(result.getTypePercent()), result.getTypeNumbers(), totalResult);
           break;
         case "4":
-          logger.printResult(result.sortResult(result.getNumbersPercent()), result.getNumbersNumbers());
+          logger.printResult(result.sortResult(result.getNumbersPercent()), result.getNumbersNumbers(), totalResult);
           break;
         case "5":
-          logger.printResult(result.sortResult(result.getRowPercent()), result.getRowNumbers());
+          logger.printResult(result.sortResult(result.getRowPercent()), result.getRowNumbers(), totalResult);
           break;
         case "6":
-          logger.printResult(result.sortResult(result.getRangePercent()), result.getRangeNumbers());
+          logger.printResult(result.sortResult(result.getRangePercent()), result.getRangeNumbers(), totalResult);
           break;
         case "7":
           running = false;

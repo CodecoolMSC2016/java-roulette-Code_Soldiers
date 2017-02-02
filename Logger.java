@@ -40,9 +40,7 @@ public class Logger {
                                        "  | $$ \\$$$| $$| $$      | $$__| $$| $$  | $$",
                                        "  | $$  \\$ | $$| $$       \\$$    $$| $$  | $$",
                                        "   \\$$      \\$$ \\$$        \\$$$$$$  \\$$   \\$$",
-                                       "                                             ",
-                                       "             Make Python Great Again         ",
-                                       "                                             "};
+                                       "\n             Make Python Great Again\n         "};
     for(String line: easterEgg) {
       for(int character = 0; character < line.length(); character++) {
         System.out.print(line.charAt(character));
@@ -64,22 +62,26 @@ public class Logger {
                       "    \\   \\    |  |  |  | |  |     |  |  |  ||  | |   __|  |      /        \\   \\    ",
                       ".----)   |   |  `--'  | |  `----.|  '--'  ||  | |  |____ |  |\\  \\----.----)   |   ",
                       "|_______/     \\______/  |_______||_______/ |__| |_______|| _| `._____|_______/    ",
-                      "\n\n                          A Roulette Simulation Game"};
+                      "\n\n                          A Roulette Simulation Game\n\n"};
     for(String line: logo) {
       System.out.println(line);
     }
   }
-  public void printResult(LinkedHashMap<String, Double> percent, LinkedHashMap<String, Double> numbers) {
+  public void printResult(LinkedHashMap<String, Double> percent, LinkedHashMap<String, Double> numbers, int totalResult) {
     Set<String> keys = percent.keySet();
+    System.out.println();
     for(String key: keys) {
       System.out.println(String.format("%s --> %.2f%s (%.0f pcs)", key, percent.get(key), "%", numbers.get(key)));
     }
+    System.out.println(String.format("Total Result: %d pcs", totalResult));
+    waitTime(5000);
   }
   public void mainMenu() {
     String[] menu = new String[]{"Generate", "Color", "Type", "Numbers", "Row", "Range", "Exit"};
-    System.out.println("\nMain menu");
+    System.out.println("\nSimulator main menu");
     for(int index = 0; index < menu.length; index++) {
-      System.out.println(String.format("--> %d: %s", index + 1, menu[index]));
+      System.out.print(String.format("--> %d: %s", index + 1, menu[index]));
+      System.out.println();
     }
   }
   private void logByType(String type, String message) {
