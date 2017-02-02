@@ -33,6 +33,10 @@ public class Main {
         case "range":
           break;
         case "exit":
+          running = false;
+          try {
+            logger.easterEgg();
+          } catch (InterruptedException e) {}
           break;
         default:
           break;

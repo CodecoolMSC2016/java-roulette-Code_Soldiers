@@ -1,5 +1,6 @@
 import java.util.*;
 import java.text.*;
+import java.lang.Thread;
 
 public class Logger {
   Scanner scanner = new Scanner(System.in);
@@ -23,8 +24,44 @@ public class Logger {
   public String getInput() {
     return scanner.nextLine();
   }
-  public void easterEgg() {
-
+  public void easterEgg() throws InterruptedException {
+    String[] easterEgg = new String[] {"   __       __  _______    ______    ______  ",
+                                       "  |  \\     /  \\|       \\  /      \\  /      \\ ",
+                                       "  | $$\\   /  $$| $$$$$$$\\|  $$$$$$\\|  $$$$$$\\",
+                                       "  | $$$\\ /  $$$| $$__/ $$| $$ __\\$$| $$__| $$",
+                                       "  | $$$$\\  $$$$| $$    $$| $$|    \\| $$    $$",
+                                       "  | $$\\$$ $$ $$| $$$$$$$ | $$ \\$$$$| $$$$$$$$",
+                                       "  | $$ \\$$$| $$| $$      | $$__| $$| $$  | $$",
+                                       "  | $$  \\$ | $$| $$       \\$$    $$| $$  | $$",
+                                       "   \\$$      \\$$ \\$$        \\$$$$$$  \\$$   \\$$",
+                                       "                                             ",
+                                       "             Make Python Great Again         ",
+                                       "                                             "};
+    for(String line: easterEgg) {
+      for(int character = 0; character < line.length(); character++) {
+        System.out.print(line.charAt(character));
+        Thread.sleep(15);
+      }
+      System.out.println();
+    }
+  }
+  public void printLogo() {
+    String [] logo = {"                       ______   ______    _______   _______                       ",
+                      "                      /      | /  __  \\  |       \\ |   ____|                      ",
+                      "                     |  ,----'|  |  |  | |  .--.  ||  |__                         ",
+                      "                     |  |     |  |  |  | |  |  |  ||   __|                        ",
+                      "                     |  `----.|  `--'  | |  '--'  ||  |____                       ",
+                      "                      \\______| \\______/  |_______/ |_______|                      ",
+                      "     _______.  ______    __       _______   __   _______ .______          _______.",
+                      "    /       | /  __  \\  |  |     |       \\ |  | |   ____||   _  \\        /       |",
+                      "   |   (----`|  |  |  | |  |     |  .--.  ||  | |  |__   |  |_)  |      |   (----`",
+                      "    \\   \\    |  |  |  | |  |     |  |  |  ||  | |   __|  |      /        \\   \\    ",
+                      ".----)   |   |  `--'  | |  `----.|  '--'  ||  | |  |____ |  |\\  \\----.----)   |   ",
+                      "|_______/     \\______/  |_______||_______/ |__| |_______|| _| `._____|_______/    ",
+                      "\n\n                          A Roulette Simulation Game"};
+    for(String line: logo) {
+      System.out.println(line);
+    }
   }
   public void mainMenu() {
 
