@@ -1,5 +1,7 @@
 import java.util.Map;
 import java.util.Comparator;
+import java.util.stream.Collectors;
+import java.util.LinkedHashMap;
 
 public class Test
 {
@@ -20,10 +22,10 @@ public class Test
     System.out.println(result.getFullResultPercent());
     System.out.println();
     Map<String, Double> asd = result.getNumbersNumbers();
-    asd.entrySet().stream()
+    Map<String, Double> asd2 = asd.entrySet().stream()
       .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-      .forEach(System.out::println);
-    System.out.println(asd);
+      .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+    System.out.println(asd2);
 
   }
 }
