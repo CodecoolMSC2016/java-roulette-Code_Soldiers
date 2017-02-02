@@ -22,7 +22,13 @@ public class Logger {
   }
 
   public String getInput() {
+    System.out.print("Choose from above: ");
     return scanner.nextLine();
+  }
+  public void waitTime(int millisecond) {
+    try {
+      Thread.sleep(millisecond);
+    } catch (InterruptedException e) {};
   }
   public void easterEgg() throws InterruptedException {
     String[] easterEgg = new String[] {"   __       __  _______    ______    ______  ",
@@ -63,8 +69,12 @@ public class Logger {
       System.out.println(line);
     }
   }
+  public void printResult(String name, LinkedHashMap<String, LinkedHashMap<String, Double>> percent,
+                          LinkedHashMap<String, LinkedHashMap<String, Double>> numbers) {
+
+  }
   public void mainMenu() {
-    System.out.println("Main menu");
+    System.out.println("\nMain menu");
     System.out.println("--> generate");
     System.out.println("--> color");
     System.out.println("--> type");
@@ -86,7 +96,6 @@ public class Logger {
         System.out.println(message);
     }
   }
-
   private String getDate() {
     DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
     Date today = Calendar.getInstance().getTime();
