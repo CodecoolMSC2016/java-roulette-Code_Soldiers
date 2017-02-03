@@ -31,7 +31,6 @@ public class Main {
       logger.log("TimeStamp", "Loading completed!");
       logger.waitTime(500);
     } else if(args.length == 1) {
-      simulation.load();
       simulation = generateSimulation(Integer.parseInt(args[0]));
     }
     simulator = new Simulator(simulation, logger);
